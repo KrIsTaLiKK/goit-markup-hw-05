@@ -61,11 +61,19 @@
       <section class="hero section overlay">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="hero-btn" type="button">Order Service</button>
+          <button class="hero-btn open-modal" type="button" data-modal-open>
+            Order Service
+          </button>
 
           <!-- Modal window -->
-          <div class="backdrop">
-            <div class="modal"></div>
+          <div class="backdrop is-hidden" data-modal>
+            <div class="modal no-scroll">
+              <button class="close-button" type="button" data-modal-close>
+                <svg class="icon-close" width="8" height="8">
+                  <use href="./images/symbol-defs.svg#instagram"></use>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -569,5 +577,21 @@
         </div>
       </div>
     </footer>
+    <script>
+      (() => {
+        const refs = {
+          openModalBtn: document.querySelector('[data-modal-open]'),
+          closeModalBtn: document.querySelector('[data-modal-close]'),
+          modal: document.querySelector('[data-modal]'),
+        };
+
+        refs.openModalBtn.addEventListener('click', toggleModal);
+        refs.closeModalBtn.addEventListener('click', toggleModal);
+
+        function toggleModal() {
+          refs.modal.classList.toggle('is-hidden');
+        }
+      })();
+    </script>
   </body>
 </html>
