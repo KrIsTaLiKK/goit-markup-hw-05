@@ -10,6 +10,7 @@
   --color-navy-blue-modal: #2e2f42;
   --color-grey: #2e2f42;
   --color-white: #ffffff;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -77,6 +78,8 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--color-navy-blue);
+
+  transition: color 250ms var(--timing-function);
 }
 
 /* Add bottom underline for current page */
@@ -107,6 +110,8 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: inherit;
+
+  transition: color 250ms var(--timing-function);
 }
 .header-link:is(:hover, :focus),
 .address-link:is(:hover, :focus) {
@@ -197,6 +202,8 @@ body {
   letter-spacing: 0.04em;
   color: var(--color-white);
   cursor: pointer;
+
+  transition: background-color 250ms var(--timing-function);
 }
 
 .hero-btn:is(:hover, :focus) {
@@ -254,6 +261,9 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+
+  transition: background-color 250ms var(--timing-function),
+    color 250ms var(--timing-function);
 }
 
 .close-button:is(:hover, :focus, :active) {
@@ -451,6 +461,8 @@ body {
   color: var(--color-cloud);
   justify-content: center;
   align-items: center;
+
+  transition: background-color 250ms var(--timing-function);
 }
 
 .icon-member {
@@ -484,6 +496,9 @@ body {
   border-radius: 4px;
   justify-content: center;
   align-items: center;
+
+  transition: color 250ms var(--timing-function),
+    border 250ms var(--timing-function);
 }
 
 .icon-customer {
@@ -492,7 +507,7 @@ body {
 
 /* Hover/focus icons-customers */
 
-.link-customer:is(:hover, :focus) {
+.link-customer:is(:hover, :focus, :active) {
   border: 1px solid var(--color-ocean);
 }
 
@@ -565,9 +580,11 @@ body {
   height: 100%;
   border-radius: 50%;
   color: var(--color-cloud);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--color-iris);
   justify-content: center;
   align-items: center;
+
+  transition: background-color 250ms var(--timing-function);
 }
 
 .icon-sm {
@@ -581,7 +598,9 @@ body {
 /* Filter buttons */
 
 .filter-btn {
-  background-color: var(--color-cornflower);
+  display: block;
+  padding: 12px 24px;
+  background-color: var(--color-cloud);
   font-family: inherit;
   font-weight: inherit;
   font-size: 16px;
@@ -591,6 +610,10 @@ body {
   border: 1px solid var(--color-cornflower);
   border-radius: 4px;
   cursor: pointer;
+
+  transition: background-color 250ms var(--timing-function),
+    color 250ms var(--timing-function), box-shadow 250ms var(--timing-function),
+    border-color 250ms var(--timing-function);
 }
 
 .filter-btn:is(:hover, :focus) {
@@ -617,11 +640,6 @@ body {
   padding-top: 96px;
 }
 
-.filter-btn {
-  display: block;
-  padding: 12px 24px;
-}
-
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
@@ -639,6 +657,8 @@ body {
 
 .portfolio-link {
   display: block;
+
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 .portfolio-img-text {
